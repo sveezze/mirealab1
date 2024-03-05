@@ -3,31 +3,23 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите размер массива: ");
-        int size = scanner.nextInt();
 
-        int[] array = new int[size];
-        int sum = 0;
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        System.out.print("Введите количество аргументов командной строки: ");
+        int numArgs = scanner.nextInt();
 
-        System.out.println("Введите элементы массива:");
+        String[] commandLineArgs = new String[numArgs];
 
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
-            sum += array[i];
+        System.out.println("Введите аргументы командной строки:");
 
-            if (array[i] > max) {
-                max = array[i];
-            }
-
-            if (array[i] < min) {
-                min = array[i];
-            }
+        for (int i = 0; i < numArgs; i++) {
+            System.out.print("Аргумент " + (i + 1) + ": ");
+            commandLineArgs[i] = scanner.next();
         }
 
-        System.out.println("Сумма элементов массива: " + sum);
-        System.out.println("Максимальный элемент массива: " + max);
-        System.out.println("Минимальный элемент массива: " + min);
+        System.out.println("Введенные аргументы командной строки:");
+
+        for (String arg : commandLineArgs) {
+            System.out.println(arg);
+        }
     }
 }
