@@ -28,3 +28,13 @@ class Circle {
         this.radius = radius;
     }
 }
+
+class Tester {
+    public static void main(String[] args) {
+        Circle[] circles = new Circle[5];
+
+        // Инициализация массива объектов Circle
+
+        // Пример использования методов или вывода информации
+    }
+}
