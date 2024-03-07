@@ -1,38 +1,28 @@
-import java.util.Arrays;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array1 = generateRandomArray(5);
-        int[] array2 = generateRandomArray(5);
+        Tree tree = new Tree();
 
-        System.out.println("Original Arrays:");
-        printArray(array1);
-        printArray(array2);
 
-        Arrays.sort(array1);
-        Arrays.sort(array2);
+        tree.root = new Node(5);
+        tree.root.left = new Node(3);
+        tree.root.right = new Node(8);
+        tree.root.left.left = new Node(1);
+        tree.root.left.right = new Node(4);
 
-        System.out.println("Sorted Arrays:");
-        printArray(array1);
-        printArray(array2);
+        // Вывод содержимого дерева
+        System.out.println("Содержимое дерева:");
+        printTree(tree.root);
     }
 
-    private static int[] generateRandomArray(int size) {
-        int[] array = new int[size];
-        Random random = new Random();
-
-        for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(100); // Adjust the range as needed
+    public static void printTree(Node node) {
+        if (node != null) {
+            printTree(node.left);
+            System.out.print(node.data + " ");
+            printTree(node.right);
         }
-
-        return array;
-    }
-
-    private static void printArray(int[] array) {
-        for (int element : array) {
-            System.out.print(element + " ");
-        }
-        System.out.println();
     }
 }
