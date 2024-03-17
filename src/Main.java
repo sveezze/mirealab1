@@ -50,7 +50,7 @@ public class Main {
                     }
                     else mainTree.left.InsertNode(mainTree.left, add);
                 }
-                if(mainTree.value >= add.value){
+                if(mainTree.value <= add.value){
                     if(mainTree.right == null){
                         mainTree.right = add;
                     }
