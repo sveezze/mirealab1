@@ -1,8 +1,3 @@
-import java.io.InputStream;
-import java.util.Random;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         class Node{
