@@ -1,7 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
+    Scanner scanner = new Scanner(System.in);
     class  Node {
         Node next;
         int value;
@@ -35,5 +35,22 @@ public class Main {
         }
     }
     public static void main(String[] args) {
+        Map<String, String> capitals = new HashMap<>();
+
+        capitals.put("Russia", "Moscow");
+        capitals.put("Germany", "Berlin");
+        capitals.put("France", "Paris");
+
+        String capitalOfRussia = capitals.get("Russia");
+        System.out.println("Столица России: " + capitalOfRussia);
+
+        if (capitals.containsKey("Germany")) {
+            System.out.println("Столица Германии: " + capitals.get("Germany"));
+        }
+
+        System.out.println("Все страны и их столицы:");
+        for (Map.Entry<String, String> entry : capitals.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
     }
 }
