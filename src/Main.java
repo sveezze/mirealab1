@@ -29,6 +29,13 @@ public class Main {
                 }
                 return max.FindMax(right);
             }
+            public Node FindMin(Node min){
+                if (min.left == null){
+                    System.out.println(min.value);
+                    return min;
+                }
+                return min.FindMin(min.left);
+            }
             public void printTree(Node tree){
                 if(tree.left != null){
                     tree.left.printTree(tree.left);
@@ -52,6 +59,16 @@ public class Main {
                     else {
                         mainTree.right.InsertNode(mainTree.right, add);
                     }
+                }
+            }
+            public  void DeleteNode(Node deleteNode){
+                if(deleteNode.left == null && deleteNode.right == null){
+                    deleteNode = null;
+                }
+                if(deleteNode.left != null) {
+                    deleteNode = deleteNode.left.FindMax(deleteNode.left);
+                }
+                if(deleteNode.right != null){
                 }
             }
         }
